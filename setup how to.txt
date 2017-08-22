@@ -1,0 +1,30 @@
+Setting on Visual Studio 2017:
+
+API Project:
+
+1. install package manager console :  Npgsql.EntityFrameworkCore.PostgreSQL
+
+2. install package manager console :  Npgsql.EntityFrameworkCore.PostgreSQL.Design
+
+3. install package manager console : Install-Package Microsoft.EntityFrameworkCore -Version 1.1.2 
+
+4. Add Microsoft.EntityFrameworkCore.Tools.DotNet: (use this to run migrations from command line)
+
+Open your .csproj file in a text editor of your choice.
+Insert the line <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.1" /> within an open and close ItemGroup tag.
+Save the file and restore packages.
+
+if you want to run migrations from Package Manager Console than you need to install this:
+	install package manager console: Microsoft.EntityFrameworkCore.Tools -Version 1.1.1
+
+5. install package manager console: Install-Package Microsoft.EntityFrameworkCore.Design -Version 1.1.2
+
+6. Run Migrations by open command line from Project directory: dotnet ef migrations add InitialDatabase
+
+7. install package manager console: Install-Package Microsoft.AspNetCore.Authentication.JwtBearer
+
+UI Project:
+
+1. install react.js from nuget package manager
+
+2. install React.Web.Mvc4 from nuget package manager
