@@ -4,7 +4,7 @@ This application develop by using some tools such as:
 - VS 2017 Community edition
 - .NET Core
 - Entity Framework Code First (https://msdn.microsoft.com/en-us/library/jj591621(v=vs.113).aspx)
-- PostrgreSQL
+- PostrgreSQL (https://damienbod.com/2016/01/11/asp-net-5-with-postgresql-and-entity-framework-7/)
 - ASP.Net Identity
 - JWT (https://medium.com/vandium-software/5-easy-steps-to-understanding-json-web-tokens-jwt-1164c0adfcec)
 
