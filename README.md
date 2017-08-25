@@ -7,6 +7,7 @@ This application develop by using some tools such as:
 - PostrgreSQL (https://damienbod.com/2016/01/11/asp-net-5-with-postgresql-and-entity-framework-7/)
 - ASP.Net Identity
 - JWT (https://medium.com/vandium-software/5-easy-steps-to-understanding-json-web-tokens-jwt-1164c0adfcec)
+- Unit Testing using XUnit: https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test
 
 You can get Postgre from this URL: https://www.postgresql.org/ and pgAdmin from this url: https://www.pgadmin.org/
 
