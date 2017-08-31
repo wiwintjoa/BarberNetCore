@@ -25,3 +25,5 @@ Barber.React are using Reactjs.NET but still in development.
 Any feedback are welcome !
 
 
+License
+MIT
