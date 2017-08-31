@@ -15,3 +15,4 @@ D:\Project\Self Learning\ReactJS\BarberShop\Barber\bin\Debug\netcoreapp1.1\Barbe
 D:\Project\Self Learning\ReactJS\BarberShop\Barber\obj\Debug\netcoreapp1.1\Barber.API.AssemblyInfo.cs
 D:\Project\Self Learning\ReactJS\BarberShop\Barber\obj\Debug\netcoreapp1.1\Barber.API.dll
 D:\Project\Self Learning\ReactJS\BarberShop\Barber\obj\Debug\netcoreapp1.1\Barber.API.pdb
+D:\Project\Self Learning\ReactJS\BarberShop\Barber\obj\Debug\netcoreapp1.1\Barber.API.csprojResolveAssemblyReference.cache

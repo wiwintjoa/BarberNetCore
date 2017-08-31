@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Barber.API", "Barber\Barber.API.csproj", "{6E6C1D78-1CDF-46C4-BB74-1A16D850ABEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barber.React", "Barber.React\Barber.React.csproj", "{423DF17F-0EAB-438E-8D61-034DD35C65D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barber.Test", "Barber.Test\Barber.Test.csproj", "{C960F7DC-F9CF-45AF-9160-5697A2AF559A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{6E6C1D78-1CDF-46C4-BB74-1A16D850ABEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E6C1D78-1CDF-46C4-BB74-1A16D850ABEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E6C1D78-1CDF-46C4-BB74-1A16D850ABEF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{423DF17F-0EAB-438E-8D61-034DD35C65D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{423DF17F-0EAB-438E-8D61-034DD35C65D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{423DF17F-0EAB-438E-8D61-034DD35C65D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{423DF17F-0EAB-438E-8D61-034DD35C65D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C960F7DC-F9CF-45AF-9160-5697A2AF559A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C960F7DC-F9CF-45AF-9160-5697A2AF559A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C960F7DC-F9CF-45AF-9160-5697A2AF559A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C960F7DC-F9CF-45AF-9160-5697A2AF559A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

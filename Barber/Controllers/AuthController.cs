@@ -1,4 +1,5 @@
-﻿using Barber.API.DomainModel;
+﻿using AutoMapper;
+using Barber.API.DomainModel;
 using Barber.API.Filters;
 using Barber.API.ViewModel;
 using Microsoft.AspNetCore.Authorization;
@@ -24,13 +25,14 @@ namespace Barber.API.Controllers
         private readonly UserManager<BarberUser> _userManager;
         private readonly SignInManager<BarberUser> _signInManager;
         private readonly RoleManager<BarberRole> _roleManager;
+        private readonly IMapper _mapper;
         private IPasswordHasher<BarberUser> _passwordHasher;
         private IConfigurationRoot _configurationRoot;
         private ILogger<AuthController> _logger;
-
+        
         public AuthController(UserManager<BarberUser> userManager, SignInManager<BarberUser> signInManager,
             RoleManager<BarberRole> roleManager, IPasswordHasher<BarberUser> passwordHasher,
-            IConfigurationRoot configurationRoot, ILogger<AuthController> logger)
+            IConfigurationRoot configurationRoot, ILogger<AuthController> logger, IMapper mapper)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -38,6 +40,7 @@ namespace Barber.API.Controllers
             _logger = logger;
             _passwordHasher = passwordHasher;
             _configurationRoot = configurationRoot;
+            _mapper = mapper;
         }
 
         [AllowAnonymous]
@@ -50,6 +53,8 @@ namespace Barber.API.Controllers
             var user = new BarberUser()
             {
                 UserName = string.Concat(model.FirstName, model.LastName),
+                FirstName = model.FirstName,
+                LastName = model.LastName,
                 CreateDateTime = DateTime.UtcNow,
                 CreateUser = string.Concat(model.FirstName, model.LastName),
                 Email = model.Email
@@ -100,12 +105,14 @@ namespace Barber.API.Controllers
                         claims: claims,
                         expires: DateTime.UtcNow.AddMinutes(60),
                         signingCredentials: signingCredentials
-                        );
+                        );                    
+
                     return Ok(new
                     {
                         token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken),
-                        expiration = jwtSecurityToken.ValidTo
-                    });
+                        expiration = jwtSecurityToken.ValidTo,
+                        user = _mapper.Map<BarberUser, UserViewModel>(user)
+                });
                 }
                 return Unauthorized();
             }

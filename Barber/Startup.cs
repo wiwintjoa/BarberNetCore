@@ -8,9 +8,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
-using Swashbuckle.AspNetCore.Swagger;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 
 namespace Barber.API
 {
@@ -44,20 +44,18 @@ namespace Barber.API
             });
 
             services.AddSingleton(Configuration);
-
-            // Register the Swagger generator, defining one or more Swagger documents
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new Info { Title = "Barber API", Version = "v1" });
-            });
-
+                     
             // Add framework services.
             services.AddMvc();
+
+            services.AddAutoMapper();
 
             // Use a PostgreSQL database
             var sqlConnectionString = Configuration.GetConnectionString("DefaultConnection");
 
-            services.AddDbContext<BarberContext>(options =>
+            services
+            .AddEntityFrameworkNpgsql()
+            .AddDbContext<BarberContext>(options =>
             {
                 options.UseNpgsql(
                     sqlConnectionString,
@@ -109,13 +107,7 @@ namespace Barber.API
                     ValidateLifetime = true
                 }
             });
-
-            // Shows UseCors with CorsPolicyBuilder.
-            //app.UseCors(builder =>
-            //    builder.WithOrigins("http://localhost:3000")
-            //        .AllowAnyHeader()
-            // );
-
+          
             app.UseCors("CorsPolicy");
 
 
@@ -132,18 +124,6 @@ namespace Barber.API
                 var dbContext = serviceScope.ServiceProvider.GetService<BarberContext>();
                 EnsureDatabaseCreated(dbContext);
             }
-
-            //app.UseMvcWithDefaultRoute();
-
-            // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger();
-
-            // Enable middleware to serve swagger-ui (HTML, JS, CSS etc.), specifying the Swagger JSON endpoint.
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Barber API V1");
-            });
-            
         }
     }
 }
